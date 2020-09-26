@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TANKINATOR</title>
+    <h1>
+      TANKINATOR
+    </h1>
+    <br />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body width="100%">
+      <div class="topnav" id="myTopnav">
+          <a href="#home" class="active">Home</a>
+          <a href="#news">Meine Favoriten</a>
+          <a href="#contact">Contact</a>
+          </a>
+        </div>
+        
+    <br />
+    <img
+      src="https://images-na.ssl-images-amazon.com/images/I/51hdIaDpdxL.png"
+    />
+    <br />
+
+    <!--  das sieht etwas unschön aus ^^ -->
+    <p>
+      <b
+        >Mit dieser App können Sie ihre Lieblingstankstellen speichern
+        <br />
+        und bekommen immmer die aktuellen Preise angezeigt.<br />
+        Außerdem sagen wir Ihnen, wann Sie am besten zu ihrer<br />
+        Lieblingstankstelle fahren sollten.</b
+      >
+    </p>
+
+    <!--// ----------------------------------------------------------------
+    //Auswahlboxen für die Anpassung der Ausgabetabelle
+    -->
+    <form method="POST">
+      <b>Wählen Sie Ihre Kraftstoffart und den Suchradius: <br /></b><br />
+
+      <select
+        onchange="controller()"
+        name="Kraftstoffart"
+        id="kraftstoffart"
+        size="1"
+      >
+        <option value="e10">Super E10</option>
+        <option value="e5">Super E5</option>
+        <option value="diesel">Diesel</option>
+        <option value="all">Alle Kraftstoffarten</option>
+      </select>
+
+      <select
+        onchange="controller()"
+        name="Entfernung"
+        id="entfernung"
+        size="1"
+      >
+        <option value="1">1 km</option>
+        <option value="2">2 km</option>
+        <option value="5">5 km</option>
+        <option value="10">10 km</option>
+        <option value="25">25 km</option>
+      </select>
+      <b>sortiert nach: </b>
+      <select onchange="controller()" name="Sortieren" id="sortieren" size="1">
+        <option value="price">Preis</option>
+        <option value="dist">Entfernung</option>
+      </select>
+
+      <!-- // ----------------------------------------------------------------
+      //Formular zur Detailanzeige
+     -->
+    </form>
+    <br />
+    <div id="out"></div>
+
+    <form>
+      <label for="Tankstelle">Tankstelle</label>
+      <input id="name" readonly />
+      <br />
+
+      <label for="Straße">Straße</label>
+      <input id="street" readonly />
+      <br />
+
+      <label for="PLZ">PLZ</label>
+      <input id="postCode" readonly />
+      <br />
+      <label for="Ort">Ort</label>
+      <input id="place" readonly />
+      <br />
+      <label for="diesel">Diesel</label>
+      <input id="diesel" readonly />
+      <br />
+      <label for="Super">Super</label>
+      <input id="e5" readonly />
+      <br />
+      <label for="e10">Super E10</label>
+      <input id="e10" readonly />
+      <br />
+      <br />
+      <button type="reset">Details ausblenden</button>
+      <br />
+    </form>
+  </body>
+  <!-- // ----------------------------------------------------------------
+      //Einlesen des Codes
+     -->
+  <script src="script.js"></script>
+</html>
